@@ -1,0 +1,44 @@
+<app-cabecalho></app-cabecalho>
+<br><br><br><br><br><br><br><br>
+<section class="container-fluid">
+  <div class="row justify-content-center align-items-center h-90">
+    <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+    <form>
+      <div class="form-group">
+        <button type="button" class="form-control btn cor-default texto-white" (click)="irParaFormulario()">Criar Plano Semestra de Trabalho</button>
+      </div>
+      <br><br><br><br>
+      <div class="form-group">
+        <button type="button" class="form-control btn cor-default" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Meus Planos Semestrais</button>
+      </div>
+    </form>
+  </div>
+  <br><br><br><br>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  </div>
+</section>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Meus Planos Semestrais</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formulario">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Informe o código de busca:</label>
+            <input type="text" class="form-control" id="recipient-name" formControlName="id">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" [disabled]="!formulario.valid"  (click)="buscarPorId()" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

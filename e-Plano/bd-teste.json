@@ -1,0 +1,50 @@
+{
+  "plano-semestral": [
+    {
+      "id": 1,
+      "identificacao": [
+        {
+          "nome": "André",
+          "matricula": "123352234",
+          "anoSemestre": "2020-2",
+          "regimeTrabalho": "DEDICACAO_EXCLUSIVA"
+        }
+      ],
+      "qualificacao": [
+        {
+          "instituicaoEnsino": "UnB",
+          "formacao": "MESTRADO",
+          "curso": "ADM"
+        }
+      ],
+      "ensino": [],
+      "pesquisa": [],
+      "extensao": [],
+      "producaoAcademica": [],
+      "representacao": []
+    },
+    {
+      "id": 2,
+      "identificacao": [
+        {
+          "nome": "Maryana",
+          "matricula": "123352222",
+          "anoSemestre": "2019-2",
+          "regimeTrabalho": "DEDICACAO_EXCLUSIVA"
+        }
+      ],
+      "qualificacao": [
+        {
+          "instituicaoEnsino": "UnB",
+          "formacao": "MESTRADO",
+          "curso": "COMPUT"
+        }
+      ],
+      "ensino": [],
+      "pesquisa": [],
+      "extensao": [],
+      "producaoAcademica": [],
+      "representacao": []
+    }
+  ]
+}

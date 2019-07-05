@@ -1,0 +1,220 @@
+/* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+$fonts: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+
+$brand: #00b894;
+$light-grey: #f6f6f6;
+$dark-grey: #545555;
+$white: #fff;
+
+.loading {
+  padding: 1em;
+}
+
+demo {
+  height: 100%;
+  width: 100%;
+}
+
+.demo-header {
+  align-items: center;
+  background: $brand;
+  box-shadow: 0 0.1em 1.5em rgba($dark-grey, 0.5);
+  color: $white;
+  display: flex;
+  padding: 1em;
+}
+
+.demo-header__toggle {
+  background: transparent;
+  border: 0.15rem solid $white;
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer;
+  font-size: 0;
+  height: 1.5rem;
+  margin-right: 1rem;
+  position: relative;
+  width: 2rem;
+
+  &::after {
+    background: $white;
+    content: '';
+    height: 0.15rem;
+    left: 0;
+    margin-top: -0.075rem;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+}
+
+.demo-sidebar {
+  background-color: #fff;
+  padding: 2em 1em;
+
+  &.ng-sidebar--opened.ng-sidebar--over {
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+  }
+}
+
+.demo-contents {
+  padding: 0 2em;
+}
+
+.demo-control {
+  background-color: $light-grey;
+  border: 1px solid $dark-grey;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  padding: 0.5em 2em;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $dark-grey;
+    color: $white;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: $light-grey;
+  color: $dark-grey;
+  font: 400 1em/1.25 $fonts;
+}
+
+::selection {
+  background-color: $brand;
+  color: $white;
+  
+}
+
+a {
+  color: $brand;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 1px dotted $brand;
+  }
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+}
+
+h1 {
+  border-bottom: 1px dotted $brand;
+  display: block;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  margin: 0.5rem 0;
+}
+
+.cor-default {
+  background-color: #00b894;
+  color: white;
+}
+
+.btn:hover {
+  color: black;
+}
+
+.btn:active {
+  background-color: #00b894;
+}
+.demo-control {
+  background-color: white;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+table td {
+  word-wrap: break-word;         /* All browsers since IE 5.5+ */
+  overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+}
+
+
+.cor-Pdf {
+  background-color: #58cc8cd7;
+}
+
+
+
+.bd-callout {
+  padding: 1.10rem;
+  margin-top: 1.10rem;
+  margin-bottom: 1.10rem;
+  border: 0px solid #eee;
+  border-bottom-color: #4b4b4b;
+  border-bottom-width: .15rem;
+  border-radius: .15rem;
+}
+
+@page {
+  margin-top: 0.8cm;
+  margin-bottom: 0.8cm;
+  //border: 0px solid #eee;
+  size: "A4";
+  margin: 0cm;
+
+}
+
+@media print {
+
+  .page-break {
+    // break-before: page;
+    // break-before: always;
+
+    //page-break-before: page;
+    page-break-after: always;
+    
+  }
+
+  body {
+    background: white;
+    color: black;
+    widows: 0;
+    widows: inherit;
+
+  }
+
+  .page {
+    size: A4;
+  }
+
+
+}
+
+.page-break { 
+  break-before: page;
+  break-before: always;
+  
+}
+
+
+// .rodape {
+//    position: fixed;
+//    bottom:0;
+//    left:0;
+//    padding-top: 200px;
+// }

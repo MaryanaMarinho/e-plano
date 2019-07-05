@@ -1,0 +1,359 @@
+<div class="card">
+
+  <h5 class="card-header">Plano Semestral de Trabalho</h5>
+
+  <!--IDENTIFICACAO-->
+  <div class="card-body">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Identificação</h5>
+            <div class="table table-sm table-responsive-sm">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Professor(a)</th>
+                    <th>Matrícula</th>
+                    <th>Ano - Semestre</th>
+                    <th>Categoria Funcional</th>
+                    <th>E-mail</th>
+                    <th>Regime de Trabalho</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let identificacao of relatorioIdentificacao">
+                    <td>{{identificacao.nome}}</td>
+                    <td>{{identificacao.matricula}}</td>
+                    <td>{{identificacao.anoSemestre}}</td>
+                    <td>{{identificacao.categoriaFuncional}}</td>
+                    <td>{{identificacao.email}}</td>
+                    <td>{{identificacao.regimeTrabalho}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!--QUALIFICACAO DOCENTE-->
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Qualificação Docente</h5>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Instituição</th>
+                    <th>Formação</th>
+                    <th>Curso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let qualificacao of relatorioQualificacao">
+                    <td>{{qualificacao.instituicaoEnsino}}</td>
+                    <td>{{qualificacao.formacao}}</td>
+                    <td>{{qualificacao.curso}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!--ENSINO-->
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Ensino</h5>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Atividade de Ensino</th>
+                    <th colspan="2">Descrição</th>
+                    <th>CH/Pontos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let ensino of relatorioEnsino">
+                    <td colspan="2">{{ensino.ensino}}</td>
+                    <td colspan="2">{{ensino.descricao}}</td>
+                    <td>{{ensino.cargaHOuPontuacao}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!--PESQUISA-->
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Pesquisa</h5>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Atividade de Pesquisa</th>
+                    <th colspan="2">Descrição</th>
+                    <th>CH/Pontos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pesquisa of relatorioPesquisa">
+                    <td colspan="2">{{pesquisa.pesquisa}}</td>
+                    <td colspan="2">{{pesquisa.descricao}}</td>
+                    <td>{{pesquisa.cargaHOuPontuacao}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!--EXTENSAO-->
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Extensão</h5>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Atividade de Extensão</th>
+                    <th colspan="2">Descrição</th>
+                    <th>CH/Pontos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let extensao of relatorioExtensao">
+                    <td colspan="2">{{extensao.extensao}}</td>
+                    <td colspan="2">{{extensao.descricao}}</td>
+                    <td>{{extensao.cargaHOuPontuacao}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!--PRODUCAO ACADEMICA CULTURAL-->
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Produção Acadêmica Cultural</h5>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Atividade Acadêmica Cultural</th>
+                    <th colspan="2">Descrição</th>
+                    <th>CH/Pontos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let producao of relatorioProducaoAcademica">
+                    <td colspan="2">{{producao.producaoAcademica}}</td>
+                    <td colspan="2">{{producao.descricao}}</td>
+                    <td>{{producao.cargaHOuPontuacao}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!--ATIVIDADE DE QUALIFICACAO-->
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Atividade de Qualificação</h5>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Atividade de Qualificação</th>
+                    <th colspan="2">Descrição</th>
+                    <th>CH/Pontos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let atvQualificacao of relatorioAtvQualificacao">
+                    <td colspan="2">{{atvQualificacao.atvQualificacao}}</td>
+                    <td colspan="2">{{atvQualificacao.descricao}}</td>
+                    <td>{{atvQualificacao.cargaHOuPontuacao}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!--REPRESENTACAO-->
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Representação</h5>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="2">Atividade de Representação</th>
+                    <th colspan="2">Descrição</th>
+                    <th>CH/Pontos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let representacao of relatorioRepresentacao">
+                    <td colspan="2">{{representacao.representacao}}</td>
+                    <td colspan="2">{{representacao.descricao}}</td>
+                    <td>{{representacao.cargaHOuPontuacao}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- TABELA -->
+
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Tabela de Pontuação</h5>
+            <div class="table table-sm table-responsive ">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th colspan="6" class="text-center" style="font-size: 14px">Descrição da Atividade</th>
+                    <th class="text-center" style="font-size: 13px"> Atividade Máxima</th>
+                    <th class="text-center" style="font-size: 13px">Ponderação</th>
+                    <th class="text-center" style="font-size: 13px" >Atividades Realizadas</th>
+                    <th class="text-center" style="font-size: 14px">Total</th>
+                  </tr>
+                </thead>
+                <tbody class="bd-callout">
+                  <tr *ngFor="let ensino of objAtividadesDeEnsinos" >
+                    <td colspan="6" style="font-size: 15px">{{ensino.atividade}}</td>
+                    <td class="text-center">{{ensino.valorMax}}</td>
+                    <td class="text-center">{{ensino.valorPonderacao}}</td>
+                    <td class="text-center">{{getAtividadeRealizadaEnsino(ensino)}} </td>
+                    <td class="text-center">{{calculoPontosEnsino(ensino)}}</td>
+                  </tr>
+                </tbody>
+                <tbody class="bd-callout">
+                  <tr *ngFor="let pesquisa of objAtividadesDePesquisa">
+                    <td colspan="6" style="font-size: 15px">{{pesquisa.atividade}}</td>
+                    <td class="text-center">{{pesquisa.valorMax}}</td>
+                    <td class="text-center">{{pesquisa.valorPonderacao}}</td>
+                    <td class="text-center">{{getAtividadeRealizadaPesquisa(pesquisa)}}</td>
+                    <td class="text-center">{{calculoPontosPesquisa(pesquisa)}}</td>
+                  </tr>
+                </tbody>
+                <tbody class="bd-callout">
+                  <tr *ngFor="let extensao of objAtividadesDeExtensao">
+                    <td colspan="6" style="font-size: 15px">{{extensao.atividade}}</td>
+                    <td class="text-center">{{extensao.valorMax}}</td>
+                    <td class="text-center">{{extensao.valorPonderacao}}</td>
+                    <td class="text-center">{{getAtividadeRealizadaExtensao(extensao)}}</td>
+                    <td class="text-center">{{calculoPontosExtensao(extensao)}}</td>
+                  </tr>
+                </tbody>
+                <tbody class="bd-callout">
+                  <tr *ngFor="let prod of objAtividadesDeProducao">
+                    <td colspan="6" style="font-size: 15px">{{prod.atividade}}</td>
+                    <td class="text-center">{{prod.valorMax}}</td>
+                    <td class="text-center">{{prod.valorPonderacao}}</td>
+                    <td class="text-center">{{getAtividadeRealizadaProducao(prod)}}</td>
+                    <td class="text-center">{{calculoPontosProducao(prod)}}</td>
+                  </tr>
+                </tbody>
+                <tbody class="bd-callout">
+                  <tr *ngFor="let atvQualificacao of objAtividadesDeAtvQualificacoes">
+                    <td colspan="6" style="font-size: 15px">{{atvQualificacao.atividade}}</td>
+                    <td class="text-center">{{atvQualificacao.valorMax}}</td>
+                    <td class="text-center">{{atvQualificacao.valorPonderacao}}</td>
+                    <td class="text-center">{{getAtividadeRealizadaAtvQualificacao(atvQualificacao)}}</td>
+                    <td class="text-center">{{calculoPontosAtvQualificacao(atvQualificacao)}}</td>
+                  </tr>
+                </tbody>
+                <tbody >
+                  <tr *ngFor="let repre of objAtividadesDeRepresentacao">
+                    <td colspan="6" style="font-size: 15px">{{repre.atividade}}</td>
+                    <td class="text-center">{{repre.valorMax}}</td>
+                    <td class="text-center">{{repre.valorPonderacao}}</td>
+                    <td class="text-center">{{getAtividadeRealizadaRepresentacao(repre)}}</td>
+                    <td class="text-center">{{calculoPontosRepresentacao(repre)}}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                      <td colspan="9" class="text-center font-weight-bold text-monospace">SOMATÓRIO DE PONTOS: </td>
+                      <td class="text-center font-weight-bold text-monospace">{{geraTotal()}}</td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+    <br>
+
+      <!--BOTOES-->
+      <div class="row" id="botoes">
+        <div class="col-12">
+          <button class="btn cor-default" (click)="salvar()"> Salvar <i class="fas fa-save"></i></button>
+          <div class="float-right hidden-xs">
+            <button class="btn cor-default" (click)="gerarPDF()"> Gerar PDF <i class="fas fa-file-pdf"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

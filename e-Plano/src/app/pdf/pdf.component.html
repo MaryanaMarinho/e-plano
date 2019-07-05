@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="page d-none d-print-block  ">
+
+<head>
+</head>
+
+  <body>
+
+    <div class="page d-none d-print-block  " style="padding-bottom: 100px">
+      <div class="card ">
+
+        <div class="row no-gutters card-header bg-transparent">
+          <div class="col-2 ">
+            <img src="assets\logo.png" class="card-img-top" alt="Logo do IFG" style="max-width: 6rem;">
+          </div>
+
+          <h6 class="text-center col-8">
+            Ministério da Educação <br>
+            Instituto Federal de Goiás <br>
+            Campus Formosa <br>
+            Departamento de Áreas Acadêmicas Câmpus Formosa <br>
+            Plano Semestral de Trabalho Docente <br>
+            <i *ngFor="let ano of pdfRelatorioIdentificacao"> Período de Execução {{ano.anoSemestre}}</i>
+          </h6>
+        </div>
+
+
+        <!--IDENTIFICACAO-->
+        <div class="card-body">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Identificação</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th style="font-size: 13px">Professor(a)</th>
+                        <th style="font-size: 13px">Matrícula</th>
+                        <th style="font-size: 13px">Ano - Semestre</th>
+                        <th style="font-size: 13px">Categoria Funcional</th>
+                        <th style="font-size: 13px">E-mail</th>
+                        <th style="font-size: 13px">Regime de Trabalho</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let identificacao of pdfRelatorioIdentificacao">
+                        <td style="font-size: 12px">{{identificacao.nome}}</td>
+                        <td style="font-size: 12px">{{identificacao.matricula}}</td>
+                        <td style="font-size: 12px">{{identificacao.anoSemestre}}</td>
+                        <td style="font-size: 12px">{{identificacao.categoriaFuncional}}</td>
+                        <td style="font-size: 12px">{{identificacao.email}}</td>
+                        <td style="font-size: 12px">{{identificacao.regimeTrabalho}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!--QUALIFICACAO DOCENTE-->
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Qualificação Docente</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th style="font-size: 13px">Instituição</th>
+                        <th style="font-size: 13px">Formação</th>
+                        <th style="font-size: 13px">Curso</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let qualificacao of pdfRelatorioQualificacao">
+                        <td style="font-size: 12px">{{qualificacao.instituicaoEnsino}}</td>
+                        <td style="font-size: 12px">{{qualificacao.formacao}}</td>
+                        <td style="font-size: 12px">{{qualificacao.curso}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!--ENSINO-->
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Ensino</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th colspan="2" style="font-size: 13px">Atividade de Ensino</th>
+                        <th colspan="2" style="font-size: 13px">Descrição</th>
+                        <th class="text-center" style="font-size: 13px">CH/Pontos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let ensino of pdfRelatorioEnsino">
+                        <td colspan="2" style="font-size: 12px">{{ensino.ensino}}</td>
+                        <td colspan="2" style="font-size: 12px">{{ensino.descricao}}</td>
+                        <td class="text-center" style="font-size: 12px">{{ensino.cargaHOuPontuacao}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!--PESQUISA-->
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Pesquisa</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th colspan="2" style="font-size: 13px">Atividade de Pesquisa</th>
+                        <th colspan="2" style="font-size: 13px">Descrição</th>
+                        <th class="text-center" style="font-size: 13px">CH/Pontos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let pesquisa of pdfRelatorioPesquisa">
+                        <td colspan="2" style="font-size: 12px">{{pesquisa.pesquisa}}</td>
+                        <td colspan="2" style="font-size: 12px">{{pesquisa.descricao}}</td>
+                        <td class="text-center" style="font-size: 12px">{{pesquisa.cargaHOuPontuacao}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!--EXTENSAO-->
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Extensão</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th colspan="2" style="font-size: 13px">Atividade de Extensão</th>
+                        <th colspan="2" style="font-size: 13px">Descrição</th>
+                        <th class="text-center" style="font-size: 13px">CH/Pontos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let extensao of pdfRelatorioExtensao">
+                        <td colspan="2" style="font-size: 12px">{{extensao.extensao}}</td>
+                        <td colspan="2" style="font-size: 12px">{{extensao.descricao}}</td>
+                        <td class="text-center" style="font-size: 12px">{{extensao.cargaHOuPontuacao}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!--PRODUCAO ACADEMICA CULTURAL-->
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Produção Acadêmica Cultural</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th colspan="2" style="font-size: 13px">Atividade Acadêmica Cultural</th>
+                        <th colspan="2" style="font-size: 13px">Descrição</th>
+                        <th class="text-center" style="font-size: 13px">CH/Pontos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let producao of pdfRelatorioProducaoAcademica">
+                        <td colspan="2" style="font-size: 12px">{{producao.producaoAcademica}}</td>
+                        <td colspan="2" style="font-size: 12px">{{producao.descricao}}</td>
+                        <td class="text-center" style="font-size: 12px">{{producao.cargaHOuPontuacao}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!--ATIVIDADE DE QUALIFICACAO-->
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Atividade de Qualificação</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th colspan="2" style="font-size: 13px">Atividade de Qualificação</th>
+                        <th colspan="2" style="font-size: 13px">Descrição</th>
+                        <th class="text-center" style="font-size: 13px">CH/Pontos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let atvQualificacao of relatorioAtvQualificacao">
+                        <td colspan="2" style="font-size: 12px">{{atvQualificacao.atvQualificacao}}</td>
+                        <td colspan="2" style="font-size: 12px">{{atvQualificacao.descricao}}</td>
+                        <td class="text-center" style="font-size: 12px">{{atvQualificacao.cargaHOuPontuacao}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!--REPRESENTACAO-->
+          <div class="row justify-content-center align-items-center h-100 ">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Representação</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th colspan="2" style="font-size: 13px">Atividade de Representação</th>
+                        <th colspan="2" style="font-size: 13px">Descrição</th>
+                        <th class="text-center" style="font-size: 13px">CH/Pontos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let representacao of pdfRelatorioRepresentacao">
+                        <td colspan="2" style="font-size: 12px">{{representacao.representacao}}</td>
+                        <td colspan="2" style="font-size: 12px">{{representacao.descricao}}</td>
+                        <td class="text-center" style="font-size: 12px">{{representacao.cargaHOuPontuacao}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <div class="page-break"> </div>
+
+          <!-- ASSINATURAS  -->
+          <div class="row justify-content-center align-items-center h-100 ">
+            <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+              <div class="card">
+                <h5 class="card-header cor-Pdf">Assinaturas</h5>
+                <div class="table table-sm table-responsive-sm">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th class="text-center" style="font-size: 13px">Professor</th>
+                        <th class="text-center" style="font-size: 13px">Coordenação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><br></tr>
+                      <tr><br></tr>
+                    </tbody>
+                    <thead>
+                      <tr>
+                        <th class="text-center" style="font-size: 13px">Chefe de Departamento</th>
+                        <th class="text-center" style="font-size: 13px">Diretor do Campus</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><br></tr>
+                      <tr><br></tr>
+                    </tbody>
+                    <thead>
+                      <tr>
+                        <th colspan="2" class="text-center" style="font-size: 13px">Data</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="2" class="text-center" style="font-size: 13px">___/___/___</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-break"> </div>
+
+        <!-- TABELA -->
+
+        <div class=" row justify-content-center align-items-center h-100 ">
+          <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
+            <div class="card">
+              <h5 class="card-header cor-Pdf">Tabela de Pontuação</h5>
+              <div class="table table-sm table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th colspan="6" class="text-center" style="font-size: 13px">Descrição da Atividade</th>
+                      <th class="text-center" style="font-size: 12px"> Atividade Máxima</th>
+                      <th class="text-center" style="font-size: 12px">Ponderação</th>
+                      <th class="text-center" style="font-size: 12px">Atividades Realizadas</th>
+                      <th class="text-center" style="font-size: 13px">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ensino of objAtividadesDeEnsinos">
+                      <td colspan="6" style="font-size: 10px">{{ensino.atividade}}</td>
+                      <td class="text-center" style="font-size: 12px">{{ensino.valorMax}}</td>
+                      <td class="text-center" style="font-size: 12px">{{ensino.valorPonderacao}}</td>
+                      <td class="text-center" style="font-size: 12px">{{getAtividadeRealizadaEnsino(ensino)}} </td>
+                      <td class="text-center" style="font-size: 12px">{{calculoPontosEnsino(ensino)}}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr *ngFor="let pesquisa of objAtividadesDePesquisa">
+                      <td colspan="6" style="font-size: 10px">{{pesquisa.atividade}}</td>
+                      <td class="text-center" style="font-size: 12px">{{pesquisa.valorMax}}</td>
+                      <td class="text-center" style="font-size: 12px">{{pesquisa.valorPonderacao}}</td>
+                      <td class="text-center" style="font-size: 12px">{{getAtividadeRealizadaPesquisa(pesquisa)}}</td>
+                      <td class="text-center" style="font-size: 12px">{{calculoPontosPesquisa(pesquisa)}}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr *ngFor="let extensao of objAtividadesDeExtensao">
+                      <td colspan="6" style="font-size: 10px">{{extensao.atividade}}</td>
+                      <td class="text-center" style="font-size: 12px">{{extensao.valorMax}}</td>
+                      <td class="text-center" style="font-size: 12px">{{extensao.valorPonderacao}}</td>
+                      <td class="text-center" style="font-size: 12px">{{getAtividadeRealizadaExtensao(extensao)}}</td>
+                      <td class="text-center" style="font-size: 12px">{{calculoPontosExtensao(extensao)}}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr *ngFor="let prod of objAtividadesDeProducao">
+                      <td colspan="6" style="font-size: 10px">{{prod.atividade}}</td>
+                      <td class="text-center" style="font-size: 12px">{{prod.valorMax}}</td>
+                      <td class="text-center" style="font-size: 12px">{{prod.valorPonderacao}}</td>
+                      <td class="text-center" style="font-size: 12px">{{getAtividadeRealizadaProducao(prod)}}</td>
+                      <td class="text-center" style="font-size: 12px">{{calculoPontosProducao(prod)}}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr *ngFor="let atvQualificacao of objAtividadesDeAtvQualificacoes">
+                      <td colspan="6" style="font-size: 10px">{{atvQualificacao.atividade}}</td>
+                      <td class="text-center" style="font-size: 12px">{{atvQualificacao.valorMax}}</td>
+                      <td class="text-center" style="font-size: 12px">{{atvQualificacao.valorPonderacao}}</td>
+                      <td class="text-center" style="font-size: 12px">{{getAtividadeRealizadaAtvQualificacao(atvQualificacao)}}</td>
+                      <td class="text-center" style="font-size: 12px">{{calculoPontosAtvQualificacao(atvQualificacao)}}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr *ngFor="let repre of objAtividadesDeRepresentacao">
+                      <td colspan="6" style="font-size: 10px">{{repre.atividade}}</td>
+                      <td class="text-center" style="font-size: 12px">{{repre.valorMax}}</td>
+                      <td class="text-center" style="font-size: 12px">{{repre.valorPonderacao}}</td>
+                      <td class="text-center" style="font-size: 12px">{{getAtividadeRealizadaRepresentacao(repre)}}</td>
+                      <td class="text-center" style="font-size: 12px">{{calculoPontosRepresentacao(repre)}}</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td colspan="9" class="text-center font-weight-bold text-monospace" style="font-size: 13px">
+                        SOMATÓRIO DE PONTOS: </td>
+                      <td class="text-center font-weight-bold text-monospace">{{geraTotal()}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="bg-transparent text-center rodape">
+        Instituto Federal de Educação, Ciência e Tecnologia de Goiás - Câmpus Formosa. <br>
+        Endereço: Rua 64, esq. c/ Rua 11, s/n, Expansão Parque Lago. CEP: 73813-816. Formosa–GO. Fone: (61) 3642 9450
+      </footer>
+    </div>
+
+
+  </body>
+
+</html>
