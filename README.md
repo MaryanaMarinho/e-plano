@@ -1,5 +1,7 @@
 # e-Plano
 
+[![GitHub issues](https://img.shields.io/github/issues/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/issues) [![GitHub forks](https://img.shields.io/github/forks/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/network) [![GitHub stars](https://img.shields.io/github/stars/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/stargazers) ![](https://img.shields.io/badge/version-v1.0-blueviolet.svg)
+
 Trabalho de Conclusão de Curso - TADS - Instituto Federal de Goiás.
 Sistema para criação do Plano Semestral de Trabalho Docente do IFG - Formosa
 
