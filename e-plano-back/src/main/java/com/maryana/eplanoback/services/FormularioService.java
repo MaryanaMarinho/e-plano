@@ -16,6 +16,9 @@ public class FormularioService {
     @Autowired
     private FormularioRepository repository;
 
+    @Autowired
+    private EmailService emailService;
+
     public List<Formulario> findAll() {
 
         return repository.findAll();
@@ -29,7 +32,12 @@ public class FormularioService {
     }
 
     public Formulario insert(Formulario obj) {
-        return repository.insert(obj);
+
+        repository.insert(obj);
+
+        emailService.sendSavedFormHtmlEmail(obj);
+
+        return obj;
     }
 
     public void delete(String id) {

@@ -38,14 +38,14 @@ export class PdfComponent implements OnInit {
   ngOnInit() {
 
     this.id = this.routes.snapshot.params.id;
-    //console.log(this.id);
+    // console.log(this.id);
 
     if (this.id !== undefined) {
-      //Recupera o Formulario do Back
+      // Recupera o Formulario do Back
       this.service.getFormularioPlanoSemestral(this.id)
         .then((formulario: FormularioDto) => {
-          //console.log('Resposta no pdf', formulario);
-          //Monta o objeto
+          // console.log('Resposta no pdf', formulario);
+          // Monta o objeto
           this.formularioCadastro = formulario;
 
           this.pdfRelatorioIdentificacao = this.formularioCadastro.identificacao;
@@ -69,7 +69,7 @@ export class PdfComponent implements OnInit {
     this.pdfRelatorioRepresentacao = this.formularioCadastro.representacao;
 
     //this.objAtividadesDeEnsinos = new ListaDeAtividades().getListaAtividadeEnsino();
-    
+
     //Pega o ID da URL
     // this.routes.params.subscribe((parametros: Params) => {
     //   //Verifica se a URL esta com ID
@@ -84,10 +84,10 @@ export class PdfComponent implements OnInit {
     //    }
     // });
 
-    
 
-    
-     
+
+
+
   }
 
   objAtividadesDeEnsinos: AtividadeDeEnsino[] = new ListaDeAtividades().getListaAtividadeEnsino();
@@ -97,7 +97,7 @@ export class PdfComponent implements OnInit {
   objAtividadesDeRepresentacao: AtividadeDeRepresentacao[] = new ListaDeAtividades().getListaAtividadeRepresentacao();
   objAtividadesDeAtvQualificacoes: AtividadeDeAtvQualificacao[] = new ListaDeAtividades().getListaAtividadeAtvQualificacao();
 
-  
+
   public geraTotal() {
     let soma=0;
     let totalEnsino=0;
@@ -108,93 +108,93 @@ export class PdfComponent implements OnInit {
     let totalAtvQualificacao=0;
 
     for(let atividade of this.objAtividadesDeEnsinos) {
-      if(this.formularioCadastro.ensino.length > 0) {    
+      if(this.formularioCadastro.ensino.length > 0) {
         for(let x of this.formularioCadastro.ensino) {
-          
+
           if(x.ensino === atividade.atividade){
             totalEnsino += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeExtensao) {
-      if(this.formularioCadastro.extensao.length > 0) {    
+      if(this.formularioCadastro.extensao.length > 0) {
         for(let x of this.formularioCadastro.extensao) {
-          
+
           if(x.extensao === atividade.atividade){
             totalExtensao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDePesquisa) {
-      if(this.formularioCadastro.pesquisa.length > 0) {    
+      if(this.formularioCadastro.pesquisa.length > 0) {
         for(let x of this.formularioCadastro.pesquisa) {
-          
+
           if(x.pesquisa === atividade.atividade){
             totalPesquisa += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeProducao) {
-      if(this.formularioCadastro.producaoAcademica.length > 0) {    
+      if(this.formularioCadastro.producaoAcademica.length > 0) {
         for(let x of this.formularioCadastro.producaoAcademica) {
-          
+
           if(x.producaoAcademica === atividade.atividade){
             totalProducao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeRepresentacao) {
-      if(this.formularioCadastro.representacao.length > 0) {    
+      if(this.formularioCadastro.representacao.length > 0) {
         for(let x of this.formularioCadastro.representacao) {
-          
+
           if(x.representacao === atividade.atividade){
             totalRepresentacao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeAtvQualificacoes) {
-      if(this.formularioCadastro.atvQualificacao.length > 0) {    
+      if(this.formularioCadastro.atvQualificacao.length > 0) {
         for(let x of this.formularioCadastro.atvQualificacao) {
-          
+
           if(x.atvQualificacao === atividade.atividade){
             totalAtvQualificacao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
     soma = totalEnsino + totalExtensao + totalPesquisa + totalProducao + totalRepresentacao + totalAtvQualificacao;
-    return soma; 
+    return soma;
   }
-  
+
   public getAtividadeRealizadaEnsino(objAtividadesDeEnsinos) {
-    
-    if(this.formularioCadastro.ensino.length > 0) {  
+
+    if(this.formularioCadastro.ensino.length > 0) {
       for(let x of this.formularioCadastro.ensino) {
         if(x.ensino === objAtividadesDeEnsinos.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -204,15 +204,15 @@ export class PdfComponent implements OnInit {
   }
 
   public calculoPontosEnsino(objAtividadesDeEnsinos) {
-    if(this.formularioCadastro.ensino.length > 0) {    
+    if(this.formularioCadastro.ensino.length > 0) {
       for(let x of this.formularioCadastro.ensino) {
-        
+
         if(x.ensino === objAtividadesDeEnsinos.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeEnsinos.valorPonderacao;
 
-        }    
+        }
       }
-      
+
       return 0;
     }
     else {
@@ -221,12 +221,12 @@ export class PdfComponent implements OnInit {
   }
 
   public getAtividadeRealizadaExtensao(objAtividadesDeExtensao) {
-    
-    if(this.formularioCadastro.extensao.length > 0) {   
+
+    if(this.formularioCadastro.extensao.length > 0) {
       for(let x of this.formularioCadastro.extensao) {
         if(x.extensao === objAtividadesDeExtensao.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -236,11 +236,11 @@ export class PdfComponent implements OnInit {
   }
 
   public calculoPontosExtensao(objAtividadesDeExtensao) {
-    if(this.formularioCadastro.extensao.length > 0) {   
+    if(this.formularioCadastro.extensao.length > 0) {
       for(let x of this.formularioCadastro.extensao) {
         if(x.extensao === objAtividadesDeExtensao.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeExtensao.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -250,12 +250,12 @@ export class PdfComponent implements OnInit {
   }
 
   public getAtividadeRealizadaPesquisa(objAtividadesDePesquisa) {
-    
-    if(this.formularioCadastro.pesquisa.length > 0) {   
+
+    if(this.formularioCadastro.pesquisa.length > 0) {
       for(let x of this.formularioCadastro.pesquisa) {
         if(x.pesquisa === objAtividadesDePesquisa.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -265,11 +265,11 @@ export class PdfComponent implements OnInit {
   }
 
   public calculoPontosPesquisa(objAtividadesDePesquisa) {
-    if(this.formularioCadastro.pesquisa.length > 0) {   
+    if(this.formularioCadastro.pesquisa.length > 0) {
       for(let x of this.formularioCadastro.pesquisa) {
         if(x.pesquisa === objAtividadesDePesquisa.atividade){
           return x.cargaHOuPontuacao * objAtividadesDePesquisa.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -279,12 +279,12 @@ export class PdfComponent implements OnInit {
   }
 
   public getAtividadeRealizadaProducao(objAtividadesDeProducao) {
-    
-    if(this.formularioCadastro.producaoAcademica.length > 0) {   
+
+    if(this.formularioCadastro.producaoAcademica.length > 0) {
       for(let x of this.formularioCadastro.producaoAcademica) {
         if(x.producaoAcademica === objAtividadesDeProducao.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -294,11 +294,11 @@ export class PdfComponent implements OnInit {
   }
 
   public calculoPontosProducao(objAtividadesDeProducao) {
-    if(this.formularioCadastro.producaoAcademica.length > 0) {   
+    if(this.formularioCadastro.producaoAcademica.length > 0) {
       for(let x of this.formularioCadastro.producaoAcademica) {
         if(x.producaoAcademica === objAtividadesDeProducao.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeProducao.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -308,12 +308,12 @@ export class PdfComponent implements OnInit {
   }
 
   public getAtividadeRealizadaRepresentacao(objAtividadesDeRepresentacao) {
-    
-    if(this.formularioCadastro.representacao.length > 0) {   
+
+    if(this.formularioCadastro.representacao.length > 0) {
       for(let x of this.formularioCadastro.representacao) {
         if(x.representacao === objAtividadesDeRepresentacao.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -323,11 +323,11 @@ export class PdfComponent implements OnInit {
   }
 
   public calculoPontosRepresentacao(objAtividadesDeRepresentacao) {
-    if(this.formularioCadastro.representacao.length > 0) {   
+    if(this.formularioCadastro.representacao.length > 0) {
       for(let x of this.formularioCadastro.representacao) {
         if(x.representacao === objAtividadesDeRepresentacao.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeRepresentacao.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -337,12 +337,12 @@ export class PdfComponent implements OnInit {
   }
 
   public getAtividadeRealizadaAtvQualificacao(objAtividadesDeAtvQualificacoes) {
-    
-    if(this.formularioCadastro.atvQualificacao.length > 0) {   
+
+    if(this.formularioCadastro.atvQualificacao.length > 0) {
       for(let x of this.formularioCadastro.atvQualificacao) {
         if(x.atvQualificacao === objAtividadesDeAtvQualificacoes.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -352,11 +352,11 @@ export class PdfComponent implements OnInit {
   }
 
   public calculoPontosAtvQualificacao(objAtividadesDeAtvQualificacoes) {
-    if(this.formularioCadastro.atvQualificacao.length > 0) {   
+    if(this.formularioCadastro.atvQualificacao.length > 0) {
       for(let x of this.formularioCadastro.atvQualificacao) {
         if(x.atvQualificacao === objAtividadesDeAtvQualificacoes.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeAtvQualificacoes.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }

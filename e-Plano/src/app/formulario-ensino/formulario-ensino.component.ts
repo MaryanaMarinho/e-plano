@@ -13,6 +13,8 @@ import { invalid } from '@angular/compiler/src/render3/view/util';
 })
 export class FormularioEnsinoComponent implements OnInit {
 
+  contador: number;
+
   atividadesDeEnsinos = [
     'Planejamento e regência de aulas',
     'Número de turmas',
@@ -65,7 +67,7 @@ export class FormularioEnsinoComponent implements OnInit {
 
   // Validando o tipo de ensino selecionado
   public selecionarObjeto(atividadeSelecionada: any): void {
-    
+
     // Procura o objeto selecionado
     let atividadeEnsino: AtividadeDeEnsino = this.objAtividadesDeEnsinos.find(atividade => atividade.atividade === atividadeSelecionada);
     //console.log("OK");
@@ -73,32 +75,101 @@ export class FormularioEnsinoComponent implements OnInit {
     this.formulario.controls['cargaHOuPontuacao'].setValidators([Validators.max(atividadeEnsino.valorMax)]);
   }
 
+  public somatorioAtividade(atvCadastrada: any): void {
+    let total:number = 20;
+    let soma:number = 0;
+    if( total >= soma && atvCadastrada.cargaHOuPontuacao <= (total - soma)) {
+      soma += atvCadastrada.cargaHOuPontuacao
+      console.log(soma);
+
+    }
+    else {
+      console.log("Desabilita");
+
+    }
+  }
+
   atividadeSelecionada: boolean = true;
 
   public validarUnicaEscolha(): void {
-    if(this.formularioCadastro.ensino.length > 0 && 
+    if(this.formularioCadastro.ensino.length > 0 &&
       this.formularioCadastro.ensino.find(ensino => ensino.ensino === this.formulario.value.ensino)){
       //console.log( this.formularioCadastro.ensino.find(ensino => ensino.ensino === this.formulario.value.ensino));
       //this.formulario.controls['ensino'].setValidators([invalid]);
       this.atividadeSelecionada = false;
       console.log(this.atividadeSelecionada);
-      
+
     }
     else {
       this.atividadeSelecionada = true;
     }
-     
+
   }
 
   public cadastrarEnsino(): void {
     const ensisno: EnsinoDto = new EnsinoDto(
       this.formulario.value.ensino,
       this.formulario.value.descricao,
-      this.formulario.value.cargaHOuPontuacao
+      this.formulario.value.cargaHOuPontuacao,
+
     );
     this.relatorio.push(ensisno);
     this.formularioCadastro.ensino.push(ensisno);
     this.formulario.reset();
+
+
+  //   let ensinoSelecionado = this.formulario.value.ensino;
+
+  //   for(let i = 0; i < this.relatorio.length; i++) {
+
+  //     let atividadeEnsino: AtividadeDeEnsino = this.objAtividadesDeEnsinos.find(atividade => atividade.atividade === ensinoSelecionado);
+  //     if(this.relatorio.find(ensisno => this.relatorio[i].mapEnsino.has(ensinoSelecionado)) && this.relatorio[i].mapEnsino.get(ensinoSelecionado) <= atividadeEnsino.valorMax){
+  //       let valorAtual = this.relatorio[i].mapEnsino.get(ensinoSelecionado);
+  //       valorAtual += this.formulario.value.cargaHOuPontuacao;
+  //       this.relatorio[i].mapEnsino.set(this.formulario.value.ensino, valorAtual);
+  //       this.formularioCadastro.ensino.push(ensisno);
+  //       this.formulario.reset();
+  //     } else {
+  //       if(atividadeEnsino.valorMax >= this.formulario.value.cargaHOuPontuacao) {
+  //         this.relatorio[i].mapEnsino.set(this.formulario.value.ensino, this.formulario.value.cargaHOuPontuacao);
+  //         this.formularioCadastro.ensino.push(ensisno);
+  //         this.formulario.reset();
+  //       } else {
+  //         this.relatorio.pop();
+  //         console.log('Teste', this.relatorio);
+  //       }
+  //   }
+  // }
+
+    // this.relatorio.forEach(ensisno => {
+    //   let atividadeEnsino: AtividadeDeEnsino = this.objAtividadesDeEnsinos.find(atividade => atividade.atividade === ensinoSelecionado);
+    //   if(this.relatorio.find(ensisno => ensisno.mapEnsino.has(ensinoSelecionado)) && ensisno.mapEnsino.get(ensinoSelecionado) <= atividadeEnsino.valorMax){
+    //     let valorAtual = ensisno.mapEnsino.get(ensinoSelecionado);
+    //     valorAtual += this.formulario.value.cargaHOuPontuacao;
+    //     ensisno.mapEnsino.set(this.formulario.value.ensino, valorAtual);
+    //     this.formularioCadastro.ensino.push(ensisno);
+    //     this.formulario.reset();
+    //   } else {
+    //     if(atividadeEnsino.valorMax >= this.formulario.value.cargaHOuPontuacao) {
+    //       ensisno.mapEnsino.set(this.formulario.value.ensino, this.formulario.value.cargaHOuPontuacao);
+    //       this.formularioCadastro.ensino.push(ensisno);
+    //       this.formulario.reset();
+    //     } else {
+    //       this.relatorio.pop();
+    //       console.log('Teste', this.relatorio);
+    //     }
+    //   }
+    // });
+
+
+
+    // this.relatorio.forEach(ensino => {
+    //   if(ensino.ensino == this.formulario.value.ensino){
+    //     let atividadeEnsino: AtividadeDeEnsino = this.objAtividadesDeEnsinos.find(atividade => atividade.atividade === this.formulario.value.ensino);
+    //     //if()
+    //     ensino.cargaHOuPontuacao;
+    //   }
+    // })
   }
   public remover(ensino: EnsinoDto): void {
     let id = this.relatorio.indexOf(ensino);
@@ -108,5 +179,5 @@ export class FormularioEnsinoComponent implements OnInit {
   }
 
   objAtividadesDeEnsinos: AtividadeDeEnsino[] = new ListaDeAtividades().getListaAtividadeEnsino();
-  
+
 }

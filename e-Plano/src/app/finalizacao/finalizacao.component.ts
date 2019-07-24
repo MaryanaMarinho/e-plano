@@ -36,7 +36,7 @@ export class FinalizacaoComponent implements OnInit {
   objAtividadesDeProducao: AtividadeDeProducao[] = new ListaDeAtividades().getListaAtividadeProducao();
   objAtividadesDeRepresentacao: AtividadeDeRepresentacao[] = new ListaDeAtividades().getListaAtividadeRepresentacao();
   objAtividadesDeAtvQualificacoes: AtividadeDeAtvQualificacao[] = new ListaDeAtividades().getListaAtividadeAtvQualificacao();
-  
+
   constructor(private service: FormularioPlanoSemestralService) { }
 
   ngOnInit() {
@@ -53,10 +53,10 @@ export class FinalizacaoComponent implements OnInit {
   }
   public salvar(): void {
 
-    if(this.formularioCadastro.id !== undefined){
+    if (this.formularioCadastro.id !== undefined) {
       this.service.atualizaFormularioPlanoSemestral(this.formularioCadastro)
       .then(response => {
-        alert("Formulário Atualizado"); 
+        alert("Formulário Atualizado");
         this.idSalvo = response;
       })
     }
@@ -65,7 +65,7 @@ export class FinalizacaoComponent implements OnInit {
         (response) => {
           console.log('Ok ', response);
           this.idSalvo = response;
-          alert("Formulário Salvo!! Salve o código abaixo para realizar a busca: " + response);
+          alert("Formulário Salvo!!");
         },
         (error => {
           console.log('ERRO ', error);
@@ -79,9 +79,9 @@ export class FinalizacaoComponent implements OnInit {
     } else {
       this.salvar();
     }
-    
+
   }
-   
+
 
   public geraTotal() {
     let soma=0;
@@ -93,93 +93,93 @@ export class FinalizacaoComponent implements OnInit {
     let totalAtvQualificacao=0;
 
     for(let atividade of this.objAtividadesDeEnsinos) {
-      if(this.formularioCadastro.ensino.length > 0) {    
+      if(this.formularioCadastro.ensino.length > 0) {
         for(let x of this.formularioCadastro.ensino) {
-          
+
           if(x.ensino === atividade.atividade){
             totalEnsino += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeExtensao) {
-      if(this.formularioCadastro.extensao.length > 0) {    
+      if(this.formularioCadastro.extensao.length > 0) {
         for(let x of this.formularioCadastro.extensao) {
-          
+
           if(x.extensao === atividade.atividade){
             totalExtensao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDePesquisa) {
-      if(this.formularioCadastro.pesquisa.length > 0) {    
+      if(this.formularioCadastro.pesquisa.length > 0) {
         for(let x of this.formularioCadastro.pesquisa) {
-          
+
           if(x.pesquisa === atividade.atividade){
             totalPesquisa += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeProducao) {
-      if(this.formularioCadastro.producaoAcademica.length > 0) {    
+      if(this.formularioCadastro.producaoAcademica.length > 0) {
         for(let x of this.formularioCadastro.producaoAcademica) {
-          
+
           if(x.producaoAcademica === atividade.atividade){
             totalProducao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeRepresentacao) {
-      if(this.formularioCadastro.representacao.length > 0) {    
+      if(this.formularioCadastro.representacao.length > 0) {
         for(let x of this.formularioCadastro.representacao) {
-          
+
           if(x.representacao === atividade.atividade){
             totalRepresentacao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
 
     for(let atividade of this.objAtividadesDeAtvQualificacoes) {
-      if(this.formularioCadastro.atvQualificacao.length > 0) {    
+      if(this.formularioCadastro.atvQualificacao.length > 0) {
         for(let x of this.formularioCadastro.atvQualificacao) {
-          
+
           if(x.atvQualificacao === atividade.atividade){
             totalAtvQualificacao += x.cargaHOuPontuacao * atividade.valorPonderacao;
 
-          }    
+          }
         }
       }
-      
+
     }
     soma = totalEnsino + totalExtensao + totalPesquisa + totalProducao + totalRepresentacao + totalAtvQualificacao;
-    return soma; 
+    return soma;
   }
-  
+
   public getAtividadeRealizadaEnsino(objAtividadesDeEnsinos) {
-    
-    if(this.formularioCadastro.ensino.length > 0) {  
+
+    if(this.formularioCadastro.ensino.length > 0) {
       for(let x of this.formularioCadastro.ensino) {
         if(x.ensino === objAtividadesDeEnsinos.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -189,15 +189,15 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public calculoPontosEnsino(objAtividadesDeEnsinos) {
-    if(this.formularioCadastro.ensino.length > 0) {    
+    if(this.formularioCadastro.ensino.length > 0) {
       for(let x of this.formularioCadastro.ensino) {
-        
+
         if(x.ensino === objAtividadesDeEnsinos.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeEnsinos.valorPonderacao;
 
-        }    
+        }
       }
-      
+
       return 0;
     }
     else {
@@ -206,12 +206,12 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public getAtividadeRealizadaExtensao(objAtividadesDeExtensao) {
-    
-    if(this.formularioCadastro.extensao.length > 0) {   
+
+    if(this.formularioCadastro.extensao.length > 0) {
       for(let x of this.formularioCadastro.extensao) {
         if(x.extensao === objAtividadesDeExtensao.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -221,11 +221,11 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public calculoPontosExtensao(objAtividadesDeExtensao) {
-    if(this.formularioCadastro.extensao.length > 0) {   
+    if(this.formularioCadastro.extensao.length > 0) {
       for(let x of this.formularioCadastro.extensao) {
         if(x.extensao === objAtividadesDeExtensao.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeExtensao.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -235,12 +235,12 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public getAtividadeRealizadaPesquisa(objAtividadesDePesquisa) {
-    
-    if(this.formularioCadastro.pesquisa.length > 0) {   
+
+    if(this.formularioCadastro.pesquisa.length > 0) {
       for(let x of this.formularioCadastro.pesquisa) {
         if(x.pesquisa === objAtividadesDePesquisa.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -250,11 +250,11 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public calculoPontosPesquisa(objAtividadesDePesquisa) {
-    if(this.formularioCadastro.pesquisa.length > 0) {   
+    if(this.formularioCadastro.pesquisa.length > 0) {
       for(let x of this.formularioCadastro.pesquisa) {
         if(x.pesquisa === objAtividadesDePesquisa.atividade){
           return x.cargaHOuPontuacao * objAtividadesDePesquisa.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -264,12 +264,12 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public getAtividadeRealizadaProducao(objAtividadesDeProducao) {
-    
-    if(this.formularioCadastro.producaoAcademica.length > 0) {   
+
+    if(this.formularioCadastro.producaoAcademica.length > 0) {
       for(let x of this.formularioCadastro.producaoAcademica) {
         if(x.producaoAcademica === objAtividadesDeProducao.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -279,11 +279,11 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public calculoPontosProducao(objAtividadesDeProducao) {
-    if(this.formularioCadastro.producaoAcademica.length > 0) {   
+    if(this.formularioCadastro.producaoAcademica.length > 0) {
       for(let x of this.formularioCadastro.producaoAcademica) {
         if(x.producaoAcademica === objAtividadesDeProducao.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeProducao.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -293,12 +293,12 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public getAtividadeRealizadaRepresentacao(objAtividadesDeRepresentacao) {
-    
-    if(this.formularioCadastro.representacao.length > 0) {   
+
+    if(this.formularioCadastro.representacao.length > 0) {
       for(let x of this.formularioCadastro.representacao) {
         if(x.representacao === objAtividadesDeRepresentacao.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -308,11 +308,11 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public calculoPontosRepresentacao(objAtividadesDeRepresentacao) {
-    if(this.formularioCadastro.representacao.length > 0) {   
+    if(this.formularioCadastro.representacao.length > 0) {
       for(let x of this.formularioCadastro.representacao) {
         if(x.representacao === objAtividadesDeRepresentacao.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeRepresentacao.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -322,12 +322,12 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public getAtividadeRealizadaAtvQualificacao(objAtividadesDeAtvQualificacoes) {
-    
-    if(this.formularioCadastro.atvQualificacao.length > 0) {   
+
+    if(this.formularioCadastro.atvQualificacao.length > 0) {
       for(let x of this.formularioCadastro.atvQualificacao) {
         if(x.atvQualificacao === objAtividadesDeAtvQualificacoes.atividade){
           return x.cargaHOuPontuacao;
-        }    
+        }
       }
       return 0;
     }
@@ -337,11 +337,11 @@ export class FinalizacaoComponent implements OnInit {
   }
 
   public calculoPontosAtvQualificacao(objAtividadesDeAtvQualificacoes) {
-    if(this.formularioCadastro.atvQualificacao.length > 0) {   
+    if(this.formularioCadastro.atvQualificacao.length > 0) {
       for(let x of this.formularioCadastro.atvQualificacao) {
         if(x.atvQualificacao === objAtividadesDeAtvQualificacoes.atividade){
           return x.cargaHOuPontuacao * objAtividadesDeAtvQualificacoes.valorPonderacao;
-        }    
+        }
       }
       return 0;
     }
@@ -349,6 +349,6 @@ export class FinalizacaoComponent implements OnInit {
       return 0;
     }
   }
-  
-  
+
+
 }

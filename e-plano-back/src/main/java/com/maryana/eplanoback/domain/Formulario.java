@@ -120,4 +120,21 @@ public class Formulario implements Serializable {
 
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+
+        s.append("Prezado ");
+        for (IdentificacaoDTO ident : getIdentificacao()) {
+            s.append(ident.getNome() + ", \n");
+            s.append("Seu plano de Trabalho Docente referente a ");
+            s.append(ident.getAnoSemestre());
+        }
+
+        s.append(" está disponível em:\n");
+        s.append("http://localhost:4200/formularios/" + getId());
+
+        return s.toString();
+    }
 }

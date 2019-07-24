@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Saved Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script th:text="${form.id}">
+        var teste = "";
+    </script>
+</head>
+<body>
+<div>
+    <h2>
+        Prezado <span th:text="${nome}"> </span>,
+    </h2>
+    <h4>
+        Seu plano de Trabalho Docente referente a <i th:text="${ano}"></i>
+        está disponível <a href="#" th:href="@{http://localhost:4200/formularios/{id}(id=${form.id})}" > Clicando aqui.</a> <br>
+    </h4>
+</div>
+</body>
+</html>
