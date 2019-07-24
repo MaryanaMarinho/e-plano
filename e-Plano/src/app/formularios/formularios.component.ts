@@ -31,17 +31,17 @@ export class FormulariosComponent implements OnInit {
   tituloPagina = 'IF';
 
   // Variaveis da lib ng-sidebar
-  private _opened: boolean = false;
-  private _modeNum: number = 0;
-  private _positionNum: number = 0;
-  private _dock: boolean = false;
-  private _closeOnClickOutside: boolean = true;
-  private _closeOnClickBackdrop: boolean = false;
-  private _showBackdrop: boolean = true;
-  private _animate: boolean = true;
+  public _opened: boolean = false;
+  public _modeNum: number = 0;
+  public _positionNum: number = 0;
+  public _dock: boolean = false;
+  public _closeOnClickOutside: boolean = true;
+  public _closeOnClickBackdrop: boolean = false;
+  public _showBackdrop: boolean = true;
+  public _animate: boolean = true;
 
-  private _MODES: Array<string> = ['over', 'push', 'slide'];
-  private _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
+  public _MODES: Array<string> = ['over', 'push', 'slide'];
+  public _POSITIONS: Array<string> = ['left', 'right', 'top', 'bottom'];
 
   constructor(private router: Router, private service: FormularioPlanoSemestralService, private routes: ActivatedRoute) { }
 
@@ -65,7 +65,7 @@ export class FormulariosComponent implements OnInit {
     // });
   }
   // Botão do menu lateral
-  private _toggleOpened(): void {
+  public _toggleOpened(): void {
     this._opened = !this._opened;
     // this.isParaFormularioQualificacao = true;
     // this.isParaFormularioIdentificacao = false;
@@ -78,7 +78,7 @@ export class FormulariosComponent implements OnInit {
     // this.tituloPagina = 'IF';
   }
 
-  private _toggleMode(): void {
+  public _toggleMode(): void {
     this._modeNum++;
 
     if (this._modeNum === this._MODES.length) {
@@ -86,7 +86,7 @@ export class FormulariosComponent implements OnInit {
     }
   }
 
-  private _togglePosition(): void {
+  public _togglePosition(): void {
     this._positionNum++;
 
     if (this._positionNum === this._POSITIONS.length) {
@@ -94,12 +94,12 @@ export class FormulariosComponent implements OnInit {
     }
   }
 
-  private _toggleDock(): void {
+  public _toggleDock(): void {
     this._dock = !this._dock;
   }
 
   // Click fora do menu para fechar
-  private _toggleCloseOnClickOutside(): void {
+  public _toggleCloseOnClickOutside(): void {
     this._closeOnClickOutside = !this._closeOnClickOutside;
      this.isParaFormularioQualificacao = true;
     // this.isParaFormularioIdentificacao = false;
@@ -113,21 +113,21 @@ export class FormulariosComponent implements OnInit {
     // this.tituloPagina = 'IF';
   }
 
-  private _toggleCloseOnClickBackdrop(): void {
+  public _toggleCloseOnClickBackdrop(): void {
     //this._closeOnClickBackdrop = !this._closeOnClickBackdrop;
   }
 
-  private _toggleShowBackdrop(): void {
+  public _toggleShowBackdrop(): void {
     this._showBackdrop = !this._showBackdrop;
   }
 
-  private _toggleAnimate(): void {
+  public _toggleAnimate(): void {
     this._animate = !this._animate;
   }
-  private _onBackdropClicked(): void {
+  public _onBackdropClicked(): void {
   }
 
-  private irParaFormularioQualificacao(): void {
+  public irParaFormularioQualificacao(): void {
     this.isParaFormularioQualificacao = true;
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioEnsino = false;
@@ -139,7 +139,7 @@ export class FormulariosComponent implements OnInit {
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Qualificação Docente';
   }
-  private irParaFormularioIdentificacao(): void {
+  public irParaFormularioIdentificacao(): void {
     this.isParaFormularioIdentificacao = true;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = false;
@@ -151,7 +151,7 @@ export class FormulariosComponent implements OnInit {
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Identificação';
   }
-  private irParaFormularioEnsino(): void {
+  public irParaFormularioEnsino(): void {
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = true;
@@ -163,7 +163,7 @@ export class FormulariosComponent implements OnInit {
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Ensino';
   }
-  private irParaFormularioPesquisa(): void {
+  public irParaFormularioPesquisa(): void {
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = false;
@@ -175,7 +175,7 @@ export class FormulariosComponent implements OnInit {
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Pesquisa';
   }
-  private irParaFormularioExtensao(): void {
+  public irParaFormularioExtensao(): void {
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = false;
@@ -187,19 +187,19 @@ export class FormulariosComponent implements OnInit {
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Extensão';
   }
-  private irParaFormularioProducao(): void {
+  public irParaFormularioProducao(): void {
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = false;
     this.isParaFormularioPesquisa = false;
     this.isParaFormularioExtensao = false;
     this.isParaFormularioProducao = true;
-    this.isParaFormularioAtvQualificacao = false;    
+    this.isParaFormularioAtvQualificacao = false;
     this.isParaFormularioRepresentacao = false;
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Produção Acadêmica Cultural';
   }
-  private irParaFormularioAtvQualificacao(): void {
+  public irParaFormularioAtvQualificacao(): void {
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = false;
@@ -211,7 +211,7 @@ export class FormulariosComponent implements OnInit {
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Atividade de Qualificação';
   }
-  private irParaFormularioRepresentacao(): void {
+  public irParaFormularioRepresentacao(): void {
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = false;
@@ -223,7 +223,7 @@ export class FormulariosComponent implements OnInit {
     this.isParaFinalizacao = false;
     this.tituloPagina = 'Representação';
   }
-  private irParaFinalizacao(): void {
+  public irParaFinalizacao(): void {
     this.isParaFormularioIdentificacao = false;
     this.isParaFormularioQualificacao = false;
     this.isParaFormularioEnsino = false;
