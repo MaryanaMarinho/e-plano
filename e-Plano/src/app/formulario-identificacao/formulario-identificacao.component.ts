@@ -38,7 +38,7 @@ export class FormularioIdentificacaoComponent implements OnInit {
   public formulario: FormGroup = new FormGroup({
     professor: new FormControl(null, [ Validators.required]),
     matricula: new FormControl(null, [Validators.required]),
-    anoSemestre: new FormControl(null, [Validators.required, Validators.pattern('\\d{4}-\\d{1}')]),
+    anoSemestre: new FormControl(null, [Validators.required, Validators.pattern('(?=.*\\d)(20\\d{2}\\-[1-2])$')]),
     categoriaFuncional: new FormControl('DOCENTE EBTT'),
     email: new FormControl(null, [Validators.email, Validators.required]),
     regimeTrabalho: new FormControl(null, [Validators.required])
