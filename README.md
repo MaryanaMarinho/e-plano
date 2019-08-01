@@ -9,7 +9,7 @@
     <a href="#Back-end">Back-end</a> &bull;
     <a href="#Front-end">Front-end</a> &bull;
     <a href="#TCC">TCC</a> &bull;
-    <a href="#Interface">Interface</a>
+    <a href="#Interface">Interface</a> &bull;
     <a href="#instalacao">Instalação</a>
 </p>
 
