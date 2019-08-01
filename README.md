@@ -4,12 +4,13 @@
 
 
 -------
-[Back-end](Back-end) &bull;
-[Front-end](Front-end) &bull;
-[TCC](TCC) &bull;
-[Interface](Interface) &bull;
-[Instalação](Instalação no linux) &bull;
-
+<p align="center">
+  [Back-end](#Back-end) &bull;
+  [Front-end](#Front-end) &bull;
+  [TCC](#TCC) &bull;
+  [Interface](#Interface) &bull;
+  [Instalação](#Instalaçãonolinux) &bull;
+</p>
 -------
 
 Trabalho de Conclusão de Curso - TADS - Instituto Federal de Goiás.
