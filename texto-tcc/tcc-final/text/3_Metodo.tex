@@ -5,33 +5,36 @@
 O Plano Semestral de Trabalho, como o nome sugere, é exigido dos docentes do \ac{IFG} semestralmente nos termos da Resolução nº 9 do \ac{IFG}~\citep{resolucao}.
 Este capítulo descreve o trabalho efetuado para prover a solução proposta para a geração do Plano Semestral de Trabalho.
 
-%visao geral
+Para o gerenciamento do projeto foi empregada uma metodologia ágil inspirada no \textit{Scrum}, aplicando um sistema de entregas continuas e reuniões periódicas. 
+Entretanto, os papéis de \textit{Scrum Master}, e \textit{Product Owner} não foram empregados já que a equipe se resumiu a um único desenvolvedor.
+Por esta razão, a metodologia foi adaptada a fim de extrair do \textit{Scrum} as características ágeis mais adequadas ao projeto.
+
 Inicialmente foi realizado um levantamento de requisitos funcionais com base na Resolução nº 9~\citep{resolucao} e em entrevista com o próprio orientador que é um usuário em potencial do sistema (\textit{stakeholder}).
 Ao longo de \textit{Sprints} semanais, os avanços no desenvolvimento foram testados pelos \textit{stakeholders}.
 
 %requisitos nao funcionais
 Os requisitos não funcionais foram definidos a partir da proposta de melhoria na usabilidade do sistema. 
-Como o sistema se propõem a ser mais completo que a planilha existente, centralizando o preenchimento dos dados e a geração do documento final, o formato Web responsivo se mostrou uma opção viável.
+Como o sistema se propõem a ser mais completo que a planilha existente, centralizando o preenchimento dos dados e a geração do documento final, o formato \textit{Web} responsivo se mostrou uma opção viável.
 
-%prototipagem e RN
-O próximo passo foi desenvolver telas de protótipos com base no levantamento inicial de requisitos, os quais são apresentados na Seção~\ref{RegrasDeNegocio}
-A Seção~\nameref{Prototipos} apresenta os protótipos iniciais, acompanhados das regras de negócio que se aplicam a cada uma adas telas.
-
-%desenvolvimento
-Depois da validação dos protótipos com o \textit{stakeholder} e criação das regras de negócio com base no levantamento de requisitos, havia material suficiente para dar início a implementação do sistema.
+O próximo passo foi desenvolver telas de protótipos com base no levantamento inicial de requisitos funcionais, os quais são apresentados na Seção~\nameref{RegrasDeNegocio}.
+A Seção~\nameref{Prototipos} apresenta os protótipos iniciais, acompanhados das regras de negócio que se aplicam a cada uma das telas. 
+Os protótipos foram criados utilizando a ferramenta Pencil, versão 3.0.4~\cite{pencil}. 
+Depois da validação dos protótipos com o \textit{stakeholder} e criação das regras de negócio com base no levantamento de requisitos, houve material suficiente para dar início a implementação do sistema.
 O protótipo inicial e as regras de negócio foram ajustados de acordo com os retornos do \textit{stakeholder} ao final de cada \textit{Sprint}.
-Neste capítulo as regas de negócio apresentadas são a versão final da documentação do sistema, enquanto os protótipos são apenas os iniciais.
+Neste capítulo, as regras de negócio apresentadas são a versão final da documentação do sistema, enquanto os protótipos são apenas os iniciais.
 No Capítulo~\nameref{Resultados} é apresentado o sistema em sua versão 1.0. 
-A memória do desenvolvimento foi mantida num repositório no GitHub\footnote{https://github.com}.
+A memória do desenvolvimento foi mantida num repositório no \href{https://github.com/waldeyr/tcc-maryana}{GitHub}\footnote{https://github.com/waldeyr/tcc-maryana}.
 
-%ferramentas
-No desenvolvimento do \textit{back-end} foi utilizada a linguagem de programação \nameref{java} na versão 1.8 em conjunto do \nameref{spring} na versão 2.1.5, para a criação da lógica de negócio e construção da API~\nameref{rest} para fornecer os dados necessários para o \textit{front-end}. 
-O~\nameref{mongo} na versão 4.0.9 foi utilizado para o armazenamento da base de dados.
-No desenvolvimento do \textit{front-end} foi utilizado o \nameref{angular} na arquitetura e comunicação com o \textit{back-end} e em conjunto do \nameref{html} na versão 5, \nameref{css} e \nameref{bootstrap} na versão 4.3.4 foi construída a interface visual de interação do usuário.
+No desenvolvimento de uma aplicação \textit{Web}, há duas partes notadamente distintas, mas interdependentes, o \textit{back-end} e o \textit{front-end}. 
 
-%testes e implanatacao
+No desenvolvimento do \textit{back-end} foi utilizada a linguagem de programação \nameref{java} na versão 1.8 em conjunto do \nameref{spring} na versão 2.1.5, para a criação de uma arquitetura em camadas que está dividida na camada de domínio que é a implementação do modelo conceitual, a camada de serviço que é responsável pela a regra de negócio e que fornece operações para o~\nameref{rest}, a camada de acesso a dados que é a camada que conversa com o banco de dados~\nameref{mongo} na versão 4.0.9 e a camada de controladores~\nameref{rest} que é responsável por fornecer os dados necessários para o \textit{front-end}. 
+
+No desenvolvimento do \textit{front-end} foi utilizado o \nameref{angular} na arquitetura e comunicação com o \textit{back-end}, como uma aplicação Angular é dividida em módulos e é baseada em componentes eles são compostos principalmente por um \textit{template} \nameref{html}, \nameref{css}, e uma classe que gerencia o componente. 
+Com a criação dos componentes fornecendo a camada visual da aplicação a camada de serviço fica responsável por todas as regras de negócio da aplicação e por recuperar ou submeter dados a uma API REST. 
+Foi utilizada o \nameref{bootstrap} na versão 4.3.4 para garantir o \textit{layout} responsivo para que se adapte a qualquer tamanho de tela.
+
 Os testes e validação do sistema foram feitos pelo \textit{stakeholder} afim de verificar se os requisitos foram cumpridos e o objetivo final foi alcançado.
-A implantação não ocorreu ainda e figurará como trabalhos futuros através do uso de um Docker container\footnote{http://dockerhub.com/}.
+A implantação não ocorreu ainda e figura como trabalhos futuros através do uso de um Docker container\footnote{http://dockerhub.com} que poderá ser construído através de um Dockerfile disponível no \href{https://github.com/waldeyr/tcc-maryana}{GitHub}.
 
 \newpage
 \section{Protótipos}\label{Prototipos}

@@ -35,3 +35,73 @@ Orientador: [Waldeyr Mendes Cordeiro da Silva](https://github.com/waldeyr)
 ## Interface
 
 As imagens da interface do sistema estão disponíveis [aqui](https://github.com/MaryanaMarinho/e-plano/tree/master/resultado).
+
+## Instalação no linux
+
+```sh
+$ sudo apt-get update
+
+$ sudo apt-get install git
+
+$ sudo apt-get install nodejs
+
+$ sudo apt-get install build-essential
+
+$ sudo apt-get install oracle-java8-installer
+
+$ sudo apt-get install maven
+```
+Mongodb no Ubuntu:
+> Outros [linux](https://docs.mongodb.com/manual/administration/install-on-linux/)
+
+```sh
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+
+$ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+
+$ sudo apt-get update
+
+$ sudo apt-get install -y mongodb-org
+
+$ sudo service mongod start
+```
+Crie uma base de dados com o nome plano_semestral_trabalho
+Você pode criar atravez do shell do mongo com o comando:
+
+```sh
+$ mongo
+
+$ use plano_semestral_trabalho
+
+$ db.formulario.insertOne( { x: 1 } )
+```
+Em caso de duvida acesse:
+>https://docs.mongodb.com/manual/reference/program/mongo/#bin.mongo
+https://www.shellhacks.com/mongodb-create-database-and-user-mongo-shell/
+https://docs.mongodb.com/manual/core/databases-and-collections/#collections
+
+```sh
+$ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-Plano/dist/e-Plano.git
+
+$ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-plano-back.git
+```
+
+No arquivo application-dev.properties deve ser adicionado o usuario e a senha do email para o serviço de email funcionar.
+caminho: `e-plano-back/src/main/resources/application-dev.properties`
+Nos seguintes atributos:
+`spring.mail.username=`
+`spring.mail.password=`
+
+Na raiz do projeto back:
+```sh
+$ mvn clean install
+
+$ mvn spring-boot:run
+```
+```
+$ npm install http-server -g
+```
+Na raiz do projeto front:
+```
+$ http-server
+```
