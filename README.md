@@ -3,15 +3,17 @@
 [![GitHub issues](https://img.shields.io/github/issues/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/issues) [![GitHub forks](https://img.shields.io/github/forks/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/network) [![GitHub stars](https://img.shields.io/github/stars/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/stargazers) ![](https://img.shields.io/badge/version-v1.0-blueviolet.svg)
 
 
--------
+------------
+
 <p align="center">
-  [Back-end](#Back-end) &bull;
-  [Front-end](#Front-end) &bull;
-  [TCC](#TCC) &bull;
-  [Interface](#Interface) &bull;
-  [Instalação](#Instalaçãonolinux) &bull;
+    <a href="#Back-end">Back-end</a> &bull;
+    <a href="#Front-end">Front-end</a> &bull;
+    <a href="#TCC">TCC</a> &bull;
+    <a href="#Interface">Interface</a>
+    <a href="#Instalaçãonolinux">Instalação</a>
 </p>
--------
+
+---------------------
 
 Trabalho de Conclusão de Curso - TADS - Instituto Federal de Goiás.
 Sistema para criação do Plano Semestral de Trabalho Docente do IFG - Formosa
@@ -100,11 +102,10 @@ $ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-plano-back.g
 No arquivo application-dev.properties deve ser adicionado o usuario e a senha do email para o serviço de email funcionar.
 caminho: `e-plano-back/src/main/resources/application-dev.properties`
 
-Nos seguintes atributos:
+Nos seguintes atributos:  
 
-`spring.mail.username=`
-
-`spring.mail.password=`
+`spring.mail.username=`  
+`spring.mail.password=`  
 
 Na raiz do projeto back:
 ```sh
