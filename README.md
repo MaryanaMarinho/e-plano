@@ -88,8 +88,11 @@ $ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-plano-back.g
 
 No arquivo application-dev.properties deve ser adicionado o usuario e a senha do email para o serviço de email funcionar.
 caminho: `e-plano-back/src/main/resources/application-dev.properties`
+
 Nos seguintes atributos:
+
 `spring.mail.username=`
+
 `spring.mail.password=`
 
 Na raiz do projeto back:
