@@ -2,6 +2,16 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/issues) [![GitHub forks](https://img.shields.io/github/forks/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/network) [![GitHub stars](https://img.shields.io/github/stars/MaryanaMarinho/e-plano.svg)](https://github.com/MaryanaMarinho/e-plano/stargazers) ![](https://img.shields.io/badge/version-v1.0-blueviolet.svg)
 
+
+-------
+[Back-end](Back-end) &bull;
+[Front-end](Front-end) &bull;
+[TCC](TCC) &bull;
+[Interface](Interface) &bull;
+[Instalação](Instalação no linux) &bull;
+
+-------
+
 Trabalho de Conclusão de Curso - TADS - Instituto Federal de Goiás.
 Sistema para criação do Plano Semestral de Trabalho Docente do IFG - Formosa
 
@@ -77,8 +87,8 @@ $ db.formulario.insertOne( { x: 1 } )
 ```
 Em caso de duvida acesse:
 >https://docs.mongodb.com/manual/reference/program/mongo/#bin.mongo
-https://www.shellhacks.com/mongodb-create-database-and-user-mongo-shell/
-https://docs.mongodb.com/manual/core/databases-and-collections/#collections
+>https://www.shellhacks.com/mongodb-create-database-and-user-mongo-shell/
+>https://docs.mongodb.com/manual/core/databases-and-collections/#collections
 
 ```sh
 $ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-Plano/dist/e-Plano.git
