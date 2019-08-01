@@ -10,12 +10,12 @@
     <a href="#Front-end">Front-end</a> &bull;
     <a href="#TCC">TCC</a> &bull;
     <a href="#Interface">Interface</a>
-    <a href="#Instalaçãonolinux">Instalação</a>
+    <a href="#Instalação no linux">Instalação</a>
 </p>
 
 ---------------------
 
-Trabalho de Conclusão de Curso - TADS - Instituto Federal de Goiás.
+Trabalho de Conclusão de Curso - TADS - Instituto Federal de Goiás.  
 Sistema para criação do Plano Semestral de Trabalho Docente do IFG - Formosa
 
 ## [Back-end](https://github.com/MaryanaMarinho/e-plano/tree/master/e-plano-back)
@@ -36,10 +36,10 @@ Sistema para criação do Plano Semestral de Trabalho Docente do IFG - Formosa
 
 ### E-PLANO: PLANO SEMESTRAL DE TRABALHO DOCENTE
 
-Trabalho de Conclusão de Curso apresentado ao Departamento
-de Áreas Acadêmicas da Instituto Federal de Goiás
-campus Formosa, como requisito parcial para obtenção do
-grau de Tecnólogo em Análise e Desenvolvimento de Sistemas.
+Trabalho de Conclusão de Curso apresentado ao Departamento  
+de Áreas Acadêmicas da Instituto Federal de Goiás  
+campus Formosa, como requisito parcial para obtenção do  
+grau de Tecnólogo em Análise e Desenvolvimento de Sistemas.  
 
 Orientador: [Waldeyr Mendes Cordeiro da Silva](https://github.com/waldeyr)
 
@@ -78,7 +78,7 @@ $ sudo apt-get install -y mongodb-org
 
 $ sudo service mongod start
 ```
-Crie uma base de dados com o nome plano_semestral_trabalho
+Crie uma base de dados com o nome plano_semestral_trabalho  
 Você pode criar atravez do shell do mongo com o comando:
 
 ```sh
@@ -89,9 +89,9 @@ $ use plano_semestral_trabalho
 $ db.formulario.insertOne( { x: 1 } )
 ```
 Em caso de duvida acesse:
->https://docs.mongodb.com/manual/reference/program/mongo/#bin.mongo
->https://www.shellhacks.com/mongodb-create-database-and-user-mongo-shell/
->https://docs.mongodb.com/manual/core/databases-and-collections/#collections
+>https://docs.mongodb.com/manual/reference/program/mongo/#bin.mongo  
+>https://www.shellhacks.com/mongodb-create-database-and-user-mongo-shell/  
+>https://docs.mongodb.com/manual/core/databases-and-collections/#collections  
 
 ```sh
 $ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-Plano/dist/e-Plano.git
@@ -99,7 +99,7 @@ $ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-Plano/dist/e
 $ git clone https://github.com/MaryanaMarinho/e-plano/tree/master/e-plano-back.git
 ```
 
-No arquivo application-dev.properties deve ser adicionado o usuario e a senha do email para o serviço de email funcionar.
+No arquivo application-dev.properties deve ser adicionado o usuario e a senha do email para o serviço de email funcionar.  
 caminho: `e-plano-back/src/main/resources/application-dev.properties`
 
 Nos seguintes atributos:  
