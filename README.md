@@ -10,7 +10,7 @@
     <a href="#Front-end">Front-end</a> &bull;
     <a href="#TCC">TCC</a> &bull;
     <a href="#Interface">Interface</a>
-    <a href="#Instalação no linux">Instalação</a>
+    <a href="#instalacao">Instalação</a>
 </p>
 
 ---------------------
@@ -48,6 +48,9 @@ Orientador: [Waldeyr Mendes Cordeiro da Silva](https://github.com/waldeyr)
 ## Interface
 
 As imagens da interface do sistema estão disponíveis [aqui](https://github.com/MaryanaMarinho/e-plano/tree/master/resultado).
+
+
+<h2 id="instalacao"></h2>
 
 ## Instalação no linux
 
